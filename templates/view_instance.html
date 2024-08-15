@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Instance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        #log-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 200px;
+            overflow-y: scroll;
+            background-color: #f9f9f9;
+        }
+        #progress-bar {
+            width: 100%;
+            background-color: #ddd;
+        }
+        #progress {
+            width: 0%;
+            height: 30px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+    <script>
+        function checkPreTraining() {
+            fetch('/check_pre_training')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.pre_trained) {
+                        document.getElementById('status').innerText = 'Pre-training completed!';
+                        document.getElementById('link').style.display = 'inline';
+                    } else {
+                        setTimeout(checkPreTraining, 1000);
+                    }
+                });
+        }
+
+        function getPreTrainingLog() {
+            fetch('/get_pre_training_log')
+                .then(response => response.json())
+                .then(data => {
+                    const logBox = document.getElementById('log-box');
+                    logBox.innerHTML = '';
+                    data.log.forEach(log => {
+                        const p = document.createElement('p');
+                        p.innerText = log;
+                        logBox.appendChild(p);
+                    });
+                });
+        }
+
+        setInterval(getPreTrainingLog, 1000);
+        checkPreTraining();
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Instance ID: {{ instance_id }}</h1>
+        <h2>Port: {{ port }}</h2>
+        <p id="status">预训练进程已开启，请耐心等待</p>
+        <div id="log-box"></div>
+        <div id="progress-bar">
+            <div id="progress">0%</div>
+        </div>
+        <p>Visit <a id="link" style="display:none;" href="http://10.0.1.222:{{ port }}">http://10.0.1.222:{{ port }}</a>以访问您的数据库&大模型实例</p>
+    </div>
+</body>
+</html>
