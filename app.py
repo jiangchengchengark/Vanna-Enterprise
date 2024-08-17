@@ -62,12 +62,21 @@ def generate():
         dbname = request.form['dbname']
         user = request.form['user']
         password = request.form['password']
+        port = request.form['port']
         instance = userVanna(sql_name, user_id=ip)
-        instance.connect(host=host, dbname=dbname, user=user, password=password)
+        try:
+            port = int(port)  # 将端口从字符串转换为整数
+        except ValueError:
+            return "端口应为 int 类型"
+        instance.connect(host=host, dbname=dbname, user=user, password=password, port=port)
         session['db_name'] = dbname
     elif sql_name == 'sqlite':
         adress = request.form['adress']
         port = request.form['port']
+        try:
+            port = int(port)  # 将端口从字符串转换为整数
+        except ValueError:
+            return "端口应为 int 类型"
         dbname = request.form['dbname']
         instance = userVanna(sql_name, user_id=ip)
         instance.connect(adress=adress, port=port, dbname=dbname)
@@ -115,7 +124,7 @@ def view_instance():
     instance_id = session.get('instance_id')
     port = session.get('port')
     if instance_id:
-        return render_template('view_instance.html', instance_id=instance_id, port=port,local_adress=local_adress)
+        return render_template('view_instance.html', instance_id=instance_id, port=port)
     else:
         return "No instance generated", 404
 
@@ -138,6 +147,8 @@ def get_pre_training_log():
 
 if __name__ == '__main__':
     app.run(use_reloader=False, threaded=True, debug=True, host='0.0.0.0')
+
+
 
 
 
