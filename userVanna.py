@@ -88,7 +88,7 @@ class userVanna:
         else:
             raise ValueError("Unsupported database type")
 
-    def get_Mysql_connect(self, host=None, dbname=None, user=None, password=None, port=3306):
+    def get_Mysql_connect(self, host=None, dbname=None, user=None, password=None, port=None):
         self.user_Vanna.connect_to_mysql(host=host, dbname=dbname, user=user, password=password, port=port)
 
     def get_SQLite_connect(self, adress=None, port=None, dbname=None):
