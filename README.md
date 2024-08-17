@@ -1,7 +1,7 @@
 
 # Vanna Enterprise: 内网数据库与大模型联动框架
 
-![Vanna Logo](https://via.placeholder.com/150)
+![Vanna Logo](./)
 
 Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企业内网环境下共用数据库与大模型联动的问题。通过 Vanna Enterprise，企业用户可以轻松地在内部网络中进行数据库连接、预训练、文档训练、SQL 训练和推理，并提供一个用户友好的 Web 界面进行交互。
 
