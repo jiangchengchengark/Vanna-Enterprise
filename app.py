@@ -115,7 +115,7 @@ def view_instance():
     instance_id = session.get('instance_id')
     port = session.get('port')
     if instance_id:
-        return render_template('view_instance.html', instance_id=instance_id, port=port)
+        return render_template('view_instance.html', instance_id=instance_id, port=port,local_adress=local_adress)
     else:
         return "No instance generated", 404
 
