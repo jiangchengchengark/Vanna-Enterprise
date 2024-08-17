@@ -159,7 +159,7 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
 
 ## 联系
 
-如有关于本项目的任何问题或建议，请通过 [email](mailto:your-email@example.com) 或 [GitHub Issues](https://github.com/yourusername/vanna-enterprise/issues) 联系我们。
+如有关于本项目的任何问题或建议，请通过 [email](mailto:3306065226@qq.com) 或 [GitHub Issues](https://github.com/jiangchengchengark/Vanna-Enterprise/issues) 联系我们。
 
 ---
 
