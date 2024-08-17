@@ -30,7 +30,7 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
 
 1. 克隆项目仓库：
    ```bash
-   git clone https://github.com/yourusername/vanna-enterprise.git
+   git clone https://github.com/jiangchengchengark/vanna-Enterprise.git
    cd vanna-enterprise
    ```
 
