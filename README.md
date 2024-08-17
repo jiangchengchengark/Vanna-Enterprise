@@ -1,5 +1,5 @@
 
-# Vanna Enterprise: 内网数据库与大模型联动框架
+# Vanna Enterprise: 内网数据库与大模型联动框架（目前只支持zhipuAI）
 
 ![Vanna Logo](https://via.placeholder.com/150)
 
