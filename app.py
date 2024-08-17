@@ -5,7 +5,7 @@ import logging
 import threading
 import json
 import os
-
+local_adress=os.getenv('LOCAL_ADRESS')
 app = Flask(__name__)
 app.secret_key = '1345456'  # 设置一个秘密密钥用于会话加密
 
@@ -124,7 +124,7 @@ def view_instance():
     instance_id = session.get('instance_id')
     port = session.get('port')
     if instance_id:
-        return render_template('view_instance.html', instance_id=instance_id, port=port)
+        return render_template('view_instance.html', instance_id=instance_id, port=port,local_adress=local_adress)
     else:
         return "No instance generated", 404
 
