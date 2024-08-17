@@ -57,6 +57,8 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
 
 2. 打开浏览器，访问 `http://your_local_adress:port`，其中 `port` 是应用启动时分配的端口，默认5000。
 
+3. 注意，如果重启python进程，需要删除生成的pre-train.log日志文件再运行
+
 ### 前端界面操作
 
 1. **欢迎页面**：访问应用的欢迎页面，选择数据库类型。
