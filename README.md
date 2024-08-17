@@ -40,7 +40,7 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
    ```
 
 3. 配置环境变量：
-   在项目根目录下创建一个 `.env` 文件，并添加以下内容：
+   在项目根目录下找到 `.env` 文件，并添加以下内容：
    ```
    API_KEY=your_api_key_here
    LOCAL_ADRESS=your_local_adress_here
