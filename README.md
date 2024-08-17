@@ -4,7 +4,7 @@
 ![Vanna Logo](./vanna.png)
 
 Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企业内网环境下共用数据库与大模型联动的问题。通过 Vanna Enterprise，企业用户可以轻松地在内部网络中进行数据库连接、预训练、文档训练、SQL 训练和推理，并提供一个用户友好的 Web 界面进行交互。
-./welcome.png
+![welcome html](./welcome.png)
 目前仅支持zhipuAI的调用实例，后续将会逐步同步原vanna框架主流LLM的集成
 
 ## 特性
@@ -66,13 +66,13 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
 3. **生成实例**：点击生成实例按钮，系统将自动连接数据库并启动预训练。
 4. **查看实例**：在实例查看页面，可以进行推理、查看预训练日志等操作。
 
-./config1.png
+![config.html](./config1.png)
 
 ### 预训练
 
 预训练将在生成实例时自动进行，用户可以在实例查看页面查看预训练日志。
 
-./pre_train.png
+![pre_train.html](./pre_train.png)
 
 ### 文档训练
 
@@ -89,7 +89,7 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
 ### 推理
 
 在实例查看页面，输入问题，系统将生成对应的 SQL 查询并返回结果。
-./get_answer.png
+![get_answer.html](./get_answer.png)
 
 ## 服务器部署
 
