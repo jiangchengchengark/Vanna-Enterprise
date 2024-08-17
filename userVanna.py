@@ -10,10 +10,14 @@ from vanna.ZhipuAI import ZhipuAI_Chat
 from vanna.chromadb import ChromaDB_VectorStore
 from vanna.ZhipuAI import ZhipuAIEmbeddingFunction
 import uuid
-
+# 加载 .env 文件
+load_dotenv()
+# 读取环境变量
+api_key = os.getenv('API_KEY')
+local_adress=os.getenv('LOCAL_ADRESS')
 # 创建zhipuembedding实例
 zhipu_ai_embedding_function = ZhipuAIEmbeddingFunction(
-    config={"api_key": "e99ba8aa2a6a3356c5bdd3c8cca7328c.5ysXsk60jDBQlDXH","model_name":"embedding-2"}
+    config={"api_key":api_key,"model_name":"embedding-2"}
 )
 
 # 基本不变，系统设定的llm和向量数据库装置
@@ -29,7 +33,7 @@ class CustomFlaskApp(VannaFlaskApp):
             print(eval_js(f"google.colab.kernel.proxyPort({port})"))
         except:
             print("Your app is running at:")
-            print(f"http://10.0.1.222:{port}")
+            print(f"http://{local_adress}:{port}")
         self.flask_app.run(host="0.0.0.0", port=port, use_reloader=False, debug=True)
 
 class init_Vanna(ChromaDB_VectorStore, ZhipuAI_Chat):
@@ -45,7 +49,7 @@ class userVanna:
         self.sql_name = sql_name
         self.user_id = user_id
         self.vsconfig = self.get_or_create_vsconfig_path()
-        self.user_Vanna = init_Vanna(config={"api_key": "e99ba8aa2a6a3356c5bdd3c8cca7328c.5ysXsk60jDBQlDXH", "model": "glm-4-flash"}, vsconfig=self.vsconfig)
+        self.user_Vanna = init_Vanna(config={"api_key": api_key, "model": "glm-4-flash"}, vsconfig=self.vsconfig)
         self.port = None
         self.customflaskapp = customflaskapp
         self.port_event = threading.Event()
