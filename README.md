@@ -53,7 +53,7 @@ Vanna Enterprise 是一个基于 Vanna 框架的扩展项目，旨在解决企�
    python app.py
    ```
 
-2. 打开浏览器，访问 `http://your_local_adress:port`，其中 `port` 是应用启动时分配的端口。
+2. 打开浏览器，访问 `http://your_local_adress:port`，其中 `port` 是应用启动时分配的端口，默认5000。
 
 ### 前端界面操作
 
